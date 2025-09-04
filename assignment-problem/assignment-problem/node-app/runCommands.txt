@@ -1,0 +1,15 @@
+1- docker build .
+
+2- docker run -p 8888:3000 -d 90da75fe0c1eb303a1c6cfc75e9bcf5e8c182fba76e640dfed06e866cbaec71d
+   docker ps
+   docker stop keen_golick
+
+3- docker run --name new-node-app -d 90da75fe0c1e
+
+4- docker stop new-node-app 
+   docker container prune
+
+5- docker build -t meu-novo-node:1235 .
+
+6- docker run -p 8888:3000 --rm -d meu-novo-node:1235
+

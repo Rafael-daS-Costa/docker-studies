@@ -1,0 +1,16 @@
+1-  docker build .
+
+2-  docker run -it 05230a4bb595e8d866f0c72b0c1a655479de70e596428eeec07da61c9f0715d5 -> Id da imagem
+
+3-  docker run -it --name python-renamed 05230a4bb595e8d866f0c72b0c1a655479de70e596428eeec07da61c9f0715d5
+
+4-  docker container prune
+
+5-  docker build -t meu-python:latest .
+
+6-  docker run -it --rm 774653c0d2138fecbf7ac2d871abbb926545e78c6ace66df45ae78c206660331
+
+
+Para nomear imagens: -t nome:tags
+
+Para nomear containers: --name nome-legal id-container
