@@ -1,0 +1,9 @@
+docker run -p 8888:8000 --env PORT=8000 -d --rm --name feedback-app -v feedback:/app/feedback -v "/home/rafael/personalProjects/docker/section3-Data-and-Volumes/data-volumes-01-starting-setup/data-volumes-01-starting-setup:/app:ro" -v /app/temp -v /app/node_modules feedback-node:env
+// Roda container na porta 8000 expondo porta 8888, seta variavel PORT para 8000 no modo detached removendo container depois de parar
+// nomeia o container como feedback-app, adiciona um volume nomeado feedback,
+// adiciona um bind mount do código da aplicação sendo readonly, adiciona volume anonimo para codigo do bind mount não
+// sobrescrever código do docker e cria outro volume anonimo para que o node_modules não seja sobrescrito por algum node_modules na máquina do host 
+
+
+// a parte do --env PORT=8000 também pode ser:
+--env-file ./.env
