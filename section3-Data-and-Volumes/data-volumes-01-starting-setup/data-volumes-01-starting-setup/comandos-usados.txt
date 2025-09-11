@@ -7,3 +7,6 @@ docker run -p 8888:8000 --env PORT=8000 -d --rm --name feedback-app -v feedback:
 
 // a parte do --env PORT=8000 também pode ser:
 --env-file ./.env
+
+// passando argumentos para o build
+docker build -t feedback-node:dev --build-arg DEFAULT_PORT=8000 .

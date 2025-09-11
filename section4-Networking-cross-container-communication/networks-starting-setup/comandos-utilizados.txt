@@ -1,0 +1,5 @@
+// cria uma rede
+docker network create favorites-net
+
+// conecta container a uma rede
+docker run -d --name mongodb --network favorites-net mongo
