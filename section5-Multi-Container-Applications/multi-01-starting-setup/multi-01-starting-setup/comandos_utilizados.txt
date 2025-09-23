@@ -1,0 +1,15 @@
+docker network create goals-net
+
+docker run -d --name mongodb --network goals-net mongo
+
+docker build -t backend-node:latest .
+
+docker run -p 80:80 -d --name goals-backend -v "/home/rafael/personalProjects/docker/section5-Multi-Container-Applications/multi-01-starting-setup/multi-01-starting-setup/backend:/app" -v logs:/app/logs -v /app/node_modules -e MONGODB_USERNAME=rafael --network goals-net goals-node:latest
+
+docker build -t react-node:latest .
+
+docker run -p 3000:3000 -v /home/rafael/personalProjects/docker/section5-Multi-Container-Applications/multi-01-starting-setup/multi-01-starting-setup/frontend/src:/app/src --rm -it --name goals-frontend react-node:latest
+
+docker run --name mongodb -v data:/data/db --rm -d --network goals-net -e MONGO_INITDB_ROOT_USERNAME=rafael -e MONGO_INITDB_ROOT_PASSWORD=secret mongo
+
+
