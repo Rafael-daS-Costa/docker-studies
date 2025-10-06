@@ -1,0 +1,3 @@
+docker run -it -v /home/rafael/personalProjects/docker/section6-Commands-in-containers:/app mynpm init
+
+docker run -it -v /home/rafael/personalProjects/docker/section6-Commands-in-containers:/app mynpm install express --save
